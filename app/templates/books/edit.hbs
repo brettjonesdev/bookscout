@@ -1,1 +1,19 @@
+{{#top-toolbar}}
+  Books > Edit {{model.title}} ({{model.author}})
+{{/top-toolbar}}
+
+{{#paper-content classNames='md-padding'}}
+  <div class='doc-content'>
+    {{#parsley-form submitAction='edit'}}
+      <h2>Edit a book: {{model.title}} ({{model.author}})</h2>
+
+      {{book-form-type title=model.title author=model.author price=model.price description=model.description}}
+
+      <p>
+        {{#paper-button raised=true classNames='md-primary'}}Edit{{/paper-button}}
+      </p>
+    {{/parsley-form}}
+  </div>
+{{/paper-content}}
+
 {{outlet}}

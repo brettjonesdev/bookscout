@@ -21,16 +21,17 @@ export default Ember.Controller.extend({
         }),
         _this = this;
 
+      // We don't need to wait for the API response, we assume that it's going to
+      // work and send the user instantly to the inventory route where he'll be
+      // able to see him new book
+      // Our data store is already up to date
+      this.transitionToRoute('inventory');
+
       book.save()
         .catch(function () {
           // If an error occurs, bring the user back to this route
           _this.transitionToRoute('books.create');
         });
-
-      // We don't need to wait for the API response, we assume that it's going to
-      // work and send the user instantly to the inventory route where he'll be
-      // able to see him new book
-      this.transitionToRoute('inventory');
     }
   }
 });

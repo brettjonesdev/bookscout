@@ -7,16 +7,7 @@
     {{#parsley-form submitAction='create'}}
       <h2>Create a new book</h2>
 
-      {{paper-text label='Title' value=title required=true}}
-
-      {{paper-text label='Author' value=author required=true}}
-
-      <md-input-group class='md-default-theme'>
-        <label>description</label>
-        {{textarea value=description cols=80 rows=8 required=true}}
-      </md-input-group>
-
-      {{paper-text label='Price' value=price required=true}}
+      {{book-form-type}}
 
       <p>
         {{#paper-button raised=true classNames='md-primary'}}Create{{/paper-button}}
