@@ -7,6 +7,11 @@
     <img {{bind-attr src=model.gravatar alt=model.title}} width='200px' height='200px'>
     <h2>{{model.title}}</h2>
     <h3>By {{model.author}}</h3>
+    <h3>
+      {{#each category in model.categories}}
+        {{category.title}}
+      {{/each}}
+    </h3>
     <p>${{model.price}}</p>
     <p>{{model.description}}</p>
     <p>

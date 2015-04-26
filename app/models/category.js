@@ -6,5 +6,5 @@ export default DS.Model.extend({
   /**
    * Relationships
    */
-  books: DS.hasMany('book')
+  books: DS.hasMany('book', { async: true })
 });

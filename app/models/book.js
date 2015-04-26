@@ -12,7 +12,7 @@ export default DS.Model.extend({
   /**
    * Relationships
    */
-  categories: DS.hasMany('category'),
+  categories: DS.hasMany('category', { async: true }),
 
   /**
    * Gets a gravatar URL that will return a dumb image, but at least it's an image
