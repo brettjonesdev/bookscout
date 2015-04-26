@@ -8,4 +8,11 @@ var Router = Ember.Router.extend({
 export default Router.map(function() {
   this.route('bookshelf');
   this.route('inventory');
+
+  this.resource('books', { path: '/books' }, function() {
+    this.route('get', { path: '/:book_id' });
+    this.route('create', { path: '/create' });
+    this.route('edit', { path: '/edit/:book_id' });
+    this.route('delete', { path: '/delete/:book_id' });
+  });
 });

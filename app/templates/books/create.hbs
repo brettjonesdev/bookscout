@@ -1,0 +1,30 @@
+{{#top-toolbar}}
+  Books > Create a new book
+{{/top-toolbar}}
+
+{{#paper-content classNames='md-padding'}}
+  <div class='doc-content'>
+    <form {{action 'create' on='submit'}} novalidate>
+      <h2>Create a new book</h2>
+
+      {{paper-text label='Title' value=title}}
+
+      {{paper-text label='Author' value=author}}
+
+      <md-input-group class='md-default-theme'>
+        <label>Review</label>
+        {{textarea value=review cols=80 rows=8}}
+      </md-input-group>
+
+      {{paper-text label='Release date' value=releaseDate}}
+
+      {{paper-text label='Price' value=price}}
+
+      <p>
+        {{#paper-button raised=true classNames='md-primary'}}Create{{/paper-button}}
+      </p>
+    </form>
+  </div>
+{{/paper-content}}
+
+{{outlet}}
