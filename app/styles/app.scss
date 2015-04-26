@@ -36,8 +36,12 @@ body {
   font-weight: 700;
   padding: 1.1em 1.6em; }
 
-.sidenav ul li a:hover {
+.sidenav ul li a:hover,
+.sidenav ul li a.active:hover {
   background-color: #e0e0e0; }
+
+.sidenav ul li a.active {
+  background-color: #eee; }
 
 .nav-button {
   display: block;
