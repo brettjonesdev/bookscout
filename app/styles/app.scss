@@ -91,3 +91,31 @@ body {
 
 .left {
   float: left; }
+
+.book-thumbnail {
+  position: relative;
+  width: 288px;
+  float: left;
+  .paper-card {
+    height: 570px;
+  }
+  .md-primary {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+.book-grid {
+  .paper-item > a {
+    margin-right: 10px;
+  }
+}
+
+.book-grid,
+.book-thumbnail {
+  h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+}

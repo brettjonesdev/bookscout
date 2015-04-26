@@ -1,0 +1,16 @@
+{{#paper-card}}
+  {{#link-to 'books.get' book.id}}
+    <img {{bind-attr src=book.gravatar alt=book.title}}>
+  {{/link-to}}
+  {{#paper-card-content}}
+    <h3>{{#link-to 'books.get' book.id}}{{book.title}}{{/link-to}}</h3>
+    <h4>{{book.author}}</h4>
+    <p>
+      {{book.excerpt}}
+    </p>
+  {{/paper-card-content}}
+
+  {{#link-to 'books.get' book.id}}
+    {{#paper-button noink=true classNames='md-primary'}}Details{{/paper-button}}
+  {{/link-to}}
+{{/paper-card}}

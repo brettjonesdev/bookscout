@@ -1,16 +1,16 @@
 {{#top-toolbar}}
-  Books > Create a new book
+  Books > Add a new book
 {{/top-toolbar}}
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
     {{#parsley-form submitAction='create'}}
-      <h2>Create a new book</h2>
+      <h2>Add a new book</h2>
 
       {{book-form-type book=model}}
 
       <p>
-        {{#paper-button raised=true classNames='md-primary'}}Create{{/paper-button}}
+        {{#paper-button raised=true classNames='md-primary'}}Add{{/paper-button}}
       </p>
     {{/parsley-form}}
   </div>
