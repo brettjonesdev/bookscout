@@ -7,5 +7,14 @@ export default DS.Model.extend({
   price: DS.attr('number'),
   createdAt: DS.attr('date', {
     defaultValue: new Date()
-  })
+  }),
+
+  /**
+   * Computed property to get an excerpt
+   *
+   * @return {String}
+   */
+  excerpt: function () {
+    return this.get('description').substring(0, 137) + '...';
+  }.property('description')
 });

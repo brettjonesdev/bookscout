@@ -4,7 +4,19 @@
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
-
+    {{#paper-list}}
+      {{#each book in model}}
+        {{#paper-item}}
+          {{#paper-tile-content}}
+            <h3>{{book.title}}</h3>
+            <h4>{{book.author}}</h4>
+            <p>
+              {{book.excerpt}}
+            </p>
+          {{/paper-tile-content}}
+        {{/paper-item}}
+      {{/each}}
+    {{/paper-list}}
   </div>
 {{/paper-content}}
 
