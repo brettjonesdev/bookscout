@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  model: {},
+
   actions: {
     /**
      * Create a book
@@ -8,9 +10,13 @@ export default Ember.Controller.extend({
      * submitted if it passes the given validation to Parsley JS and its component
      */
     create: function () {
-      // Let's get the book model created from the Route and filled with the user
-      // information
-      var book = this.get('model'),
+      // Let's create a book model and fill it with the user information
+      var book = this.store.createRecord('book', {
+          title: this.get('model.title'),
+          author: this.get('model.author'),
+          description: this.get('model.description'),
+          price: this.get('model.price')
+        }),
         _this = this;
 
       // We don't need to wait for the API response, we assume that it's going to
