@@ -4,6 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'bookscout',
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' wss://*.firebaseio.com" },
+    firebase: 'https://bookscout.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -23,7 +25,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self'",
     'font-src': "'self' https://fonts.gstatic.com",
-    'connect-src': "'self'",
+    'connect-src': "'self' wss://bookscout.firebaseio.com",
     'img-src': "'self'",
     'media-src': "'self'"
   };
