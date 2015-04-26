@@ -6,7 +6,17 @@ export default Ember.Route.extend({
    *
    * @return {Promise}
    */
-  model: function () {
-    return this.store.findAll('book');
+  model: function() {
+    return Ember.RSVP.hash({
+      model: this.store.findAll('book'),
+      categories: this.store.findAll('category')
+    });
+  },
+
+  /**
+   * Setup all the results to the controller
+   */
+  setupController: function(controller, model) {
+    controller.setProperties(model);
   }
 });

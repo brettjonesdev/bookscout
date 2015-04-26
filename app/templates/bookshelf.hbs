@@ -30,6 +30,16 @@
       value=order
     }}
   </p>
+
+  <p class='separator'>
+    Categories
+    {{view 'select'
+      content=sortCategories
+      optionValuePath="content.option"
+      optionLabelPath="content.value"
+      value=sortCategory
+    }}
+  </p>
 {{/top-toolbar}}
 
 <br><br><br><br>
@@ -39,7 +49,7 @@
     {{#if shouldDisplayGrid}}
       {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
         {{#paper-list}}
-          {{#each book in arrangedContent}}
+          {{#each book in filteredContent}}
             {{book-grid book=book}}
             {{paper-divider inset=true}}
           {{/each}}
@@ -50,7 +60,7 @@
     {{#if shouldDisplayThumbnail}}
       {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
         {{#paper-list}}
-          {{#each book in arrangedContent}}
+          {{#each book in filteredContent}}
             {{book-thumbnail book=book}}
           {{/each}}
         {{/paper-list}}

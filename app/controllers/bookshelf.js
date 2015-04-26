@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
   sortProperties: ['title', 'author'],
-  queryParams: ['display', 'sortBy', 'order'],
+  queryParams: ['display', 'sortBy', 'order', 'sortCategory'],
   display: 'grid',
   sortBy: 'title',
   order: 'asc',
+  sortCategory: null,
 
   displays: [
     { option: 'grid', value: 'Grid' },
@@ -23,6 +24,16 @@ export default Ember.ArrayController.extend({
     { option: 'price', value: 'Price' },
     { option: 'createdAt', value: 'What\'s new' }
   ],
+
+  sortCategories: function () {
+    var sortCategories = [{ option: null, value: 'All' }];
+
+    this.get('categories').map(function (category) {
+      sortCategories.push({ option: category.get('title'), value: category.get('title') });
+    });
+
+    return sortCategories;
+  }.property('categories'),
 
   /**
    * Set sort properties when we need to sort the collection again
@@ -51,5 +62,17 @@ export default Ember.ArrayController.extend({
    */
   shouldDisplayThumbnail: function () {
     return 'thumbnail' === this.get('display');
-  }.property('display')
+  }.property('display'),
+
+  filteredContent: function () {
+    if (null === this.get('sortCategory')) {
+      return this.get('arrangedContent');
+    }
+
+    var _this = this;
+
+    return this.get('arrangedContent').filter(function (book) {
+      return !!book.get('categories').findBy('title', _this.get('sortCategory'));
+    });
+  }.property('arrangedContent', 'sortCategory'),
 });
