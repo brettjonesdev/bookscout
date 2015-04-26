@@ -4,6 +4,8 @@
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
+    {{#paper-switch checked=displaySwitch}} {{display}} {{/paper-switch}}
+
     {{#if shouldDisplayGrid}}
       {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
         {{#paper-list}}
@@ -17,9 +19,11 @@
 
     {{#if shouldDisplayThumbnail}}
       {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
-        {{#each book in arrangedContent}}
-          {{book-thumbnail book=book}}
-        {{/each}}
+        {{#paper-list}}
+          {{#each book in arrangedContent}}
+            {{book-thumbnail book=book}}
+          {{/each}}
+        {{/paper-list}}
       {{/paper-content}}
     {{/if}}
   </div>
