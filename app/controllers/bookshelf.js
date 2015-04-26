@@ -2,24 +2,35 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
   sortProperties: ['title', 'author'],
-  queryParams: ['display'],
+  queryParams: ['display', 'sortBy', 'order'],
   display: 'grid',
+  sortBy: 'title',
+  order: 'asc',
+
+  displays: [
+    { option: 'grid', value: 'Grid' },
+    { option: 'thumbnail', value: 'Thumbnail' }
+  ],
+
+  orders: [
+    { option: 'asc', value: 'Ascending' },
+    { option: 'desc', value: 'Descending' }
+  ],
+
+  sortParameters: [
+    { option: 'title', value: 'Title' },
+    { option: 'author', value: 'Author' },
+    { option: 'price', value: 'Price' },
+    { option: 'createdAt', value: 'What\'s new' }
+  ],
 
   /**
-   * Sets the new display when the user clicks on the switch
+   * Set sort properties when we need to sort the collection again
    */
-  changeDisplay: function () {
-    this.set('display', this.get('displaySwitch') ? 'thumbnail' : 'grid');
-  }.observes('displaySwitch'),
-
-  /**
-   * Initialize the switch value
-   *
-   * @return {Boolean}
-   */
-  displaySwitch: function () {
-    return 'thumbnail' === this.get('display');
-  }.property(),
+  changeSortProperties: function () {
+    this.set('sortProperties', [this.get('sortBy')]);
+    this.set('sortAscending', 'asc' === this.get('order'));
+  }.observes('sortBy', 'order'),
 
   /**
    * Should display results as a grid?

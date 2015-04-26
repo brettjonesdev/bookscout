@@ -1,11 +1,41 @@
 {{#top-toolbar}}
-  Bookshelf
+  <p class='separator'>Bookshelf</p>
+
+  <p class='separator'>
+    Display
+    {{view 'select'
+      content=displays
+      optionValuePath="content.option"
+      optionLabelPath="content.value"
+      value=display
+    }}
+  </p>
+
+  <p class='separator'>
+    Sort by
+    {{view 'select'
+      content=sortParameters
+      optionValuePath="content.option"
+      optionLabelPath="content.value"
+      value=sortBy
+    }}
+  </p>
+
+  <p class='separator'>
+    Order
+    {{view 'select'
+      content=orders
+      optionValuePath="content.option"
+      optionLabelPath="content.value"
+      value=order
+    }}
+  </p>
 {{/top-toolbar}}
+
+<br><br><br><br>
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
-    {{#paper-switch checked=displaySwitch}} {{display}} {{/paper-switch}}
-
     {{#if shouldDisplayGrid}}
       {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
         {{#paper-list}}

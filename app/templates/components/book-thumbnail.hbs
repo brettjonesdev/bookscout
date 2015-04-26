@@ -5,6 +5,7 @@
   {{#paper-card-content}}
     <h3>{{#link-to 'books.get' book.id}}{{book.title}}{{/link-to}}</h3>
     <h4>{{book.author}}</h4>
+    <h4>${{book.price}}</h4>
     <p>
       {{book.excerpt}}
     </p>
