@@ -1,10 +1,10 @@
-{{paper-text label='Title' value=book.title required=true}}
+{{paper-text label='Title' value=book.title required=true classNames='form-book-title'}}
 
-{{paper-text label='Author' value=book.author required=true}}
+{{paper-text label='Author' value=book.author required=true classNames='form-book-author'}}
 
-<md-input-group class='md-default-theme'>
+<md-input-group class='md-default-theme form-book-description'>
   <label>description</label>
   {{textarea value=book.description cols=80 rows=8 required=true}}
 </md-input-group>
 
-{{paper-text label='Price' value=book.price required=true}}
+{{paper-text label='Price' value=book.price required=true classNames='form-book-price'}}
