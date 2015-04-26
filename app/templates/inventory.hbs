@@ -4,19 +4,14 @@
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
-    {{#paper-list}}
-      {{#each book in model}}
-        {{#paper-item}}
-          {{#paper-tile-content}}
-            <h3>{{book.title}}</h3>
-            <h4>{{book.author}}</h4>
-            <p>
-              {{book.excerpt}}
-            </p>
-          {{/paper-tile-content}}
-        {{/paper-item}}
-      {{/each}}
-    {{/paper-list}}
+    {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
+      {{#paper-list}}
+        {{#each book in model}}
+          {{inventory-book book=book}}
+          {{paper-divider inset=true}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-content}}
   </div>
 {{/paper-content}}
 

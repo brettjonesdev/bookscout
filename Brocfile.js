@@ -18,5 +18,6 @@ var app = new EmberApp();
 // along with the exports of each module as its value.
 
 app.import('bower_components/parsleyjs/dist/parsley.js');
+app.import('bower_components/blueimp-md5/js/md5.js');
 
 module.exports = app.toTree();

@@ -10,6 +10,15 @@ export default DS.Model.extend({
   }),
 
   /**
+   * Gets a gravatar URL that will return a dumb image, but at least it's an image
+   *
+   * @return {String}
+   */
+  gravatar: function () {
+    return 'https://www.gravatar.com/avatar/' + md5(this.get('title')) + '?d=identicon&s=40';
+  }.property('title'),
+
+  /**
    * Computed property to get an excerpt
    *
    * @return {String}

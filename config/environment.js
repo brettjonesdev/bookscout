@@ -26,7 +26,7 @@ module.exports = function(environment) {
     'script-src': "'self' https://s-dal5-nss-28.firebaseio.com",
     'font-src': "'self' https://fonts.gstatic.com",
     'connect-src': "'self' wss://bookscout.firebaseio.com wss://s-dal5-nss-28.firebaseio.com",
-    'img-src': "'self'",
+    'img-src': "'self' https://www.gravatar.com",
     'media-src': "'self'"
   };
 
