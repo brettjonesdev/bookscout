@@ -9,6 +9,21 @@
 
       {{book-form-type book=model}}
 
+      {{#each category in categories}}
+        {{#paper-checkbox checked=category.checked}}{{category.title}}{{/paper-checkbox}}
+      {{/each}}
+
+      {{#if createCategory}}
+        {{paper-text label='Create category' value=categoryTitle class='input-create-category'}}
+        <a {{action 'createCategory'}}>
+          {{#paper-button noink=true classNames='md-primary'}}Create category{{/paper-button}}
+        </a>
+      {{else}}
+        <a {{action 'showCreateCategory'}}>
+          {{#paper-button noink=true classNames='md-primary'}}Create a category{{/paper-button}}
+        </a>
+      {{/if}}
+
       <p>
         {{#paper-button raised=true classNames='md-primary'}}Add{{/paper-button}}
       </p>

@@ -10,6 +10,11 @@ export default DS.Model.extend({
   }),
 
   /**
+   * Relationships
+   */
+  categories: DS.hasMany('category'),
+
+  /**
    * Gets a gravatar URL that will return a dumb image, but at least it's an image
    *
    * @return {String}
