@@ -1,9 +1,15 @@
 {{#top-toolbar}}
-  Inventory
+  Books inventory management
 {{/top-toolbar}}
 
 {{#paper-content classNames='md-padding'}}
   <div class='doc-content'>
+    <p>
+      {{#link-to 'books.create'}}
+        {{#paper-button raised=true classNames="md-primary"}}+ Add a book{{/paper-button}}
+      {{/link-to}}
+    </p>
+
     {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
       {{#paper-list}}
         {{#each book in model}}

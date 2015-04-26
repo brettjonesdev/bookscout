@@ -17,8 +17,14 @@
   {{!-- Don't judge me, I hate having to do something like that but it's not
   worth spending too much time on it :( --}}
   <div style='margin-right: 10px;'>
-    {{#link-to 'books.delete' book.id}}
-      {{#paper-button noink=true classNames='md-warn'}}Delete{{/paper-button}}
-    {{/link-to}}
+    {{#if shouldDisplayDeleteConfirmation}}
+      {{#paper-button noink=true classNames='md-warn'}}
+        <span {{action 'deleteBook' book}}>Are you sure?</span>
+      {{/paper-button}}
+    {{else}}
+      {{#paper-button noink=true classNames='md-warn' action='displayDeleteConfirmation'}}
+        Delete
+      {{/paper-button}}
+    {{/if}}
   </div>
 {{/paper-item}}

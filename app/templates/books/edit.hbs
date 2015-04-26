@@ -7,7 +7,7 @@
     {{#parsley-form submitAction='edit'}}
       <h2>Edit a book: {{model.title}} ({{model.author}})</h2>
 
-      {{book-form-type title=model.title author=model.author price=model.price description=model.description}}
+      {{book-form-type book=model}}
 
       <p>
         {{#paper-button raised=true classNames='md-primary'}}Edit{{/paper-button}}
