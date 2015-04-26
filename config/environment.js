@@ -23,6 +23,7 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
+    'style-src': "'self' 'unsafe-inline'",
     'script-src': "'self' https://s-dal5-nss-28.firebaseio.com",
     'font-src': "'self' https://fonts.gstatic.com",
     'connect-src': "'self' wss://bookscout.firebaseio.com wss://s-dal5-nss-28.firebaseio.com",

@@ -2,4 +2,17 @@
   Bookshelf
 {{/top-toolbar}}
 
+{{#paper-content classNames='md-padding'}}
+  <div class='doc-content'>
+    {{#paper-content classNames='md-whiteframe-z1 list-demo'}}
+      {{#paper-list}}
+        {{#each book in arrangedContent}}
+          
+          {{paper-divider inset=true}}
+        {{/each}}
+      {{/paper-list}}
+    {{/paper-content}}
+  </div>
+{{/paper-content}}
+
 {{outlet}}
