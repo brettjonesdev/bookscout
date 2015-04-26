@@ -1,1 +1,20 @@
+{{#top-toolbar}}
+  Books > {{model.title}} ({{model.author}})
+{{/top-toolbar}}
+
+{{#paper-content classNames='md-padding'}}
+  <div class='doc-content'>
+    <img {{bind-attr src=model.gravatar alt=model.title}} width='200px' height='200px'>
+    <h2>{{model.title}}</h2>
+    <h3>By {{model.author}}</h3>
+    <p>${{model.price}}</p>
+    <p>{{model.description}}</p>
+    <p>
+      <a {{bind-attr href=amazonLink}} target='_blank'>
+        {{#paper-button noink=true classNames='md-primary'}}View on Amazon{{/paper-button}}
+      </a>
+    </p>
+  </div>
+{{/paper-content}}
+
 {{outlet}}
