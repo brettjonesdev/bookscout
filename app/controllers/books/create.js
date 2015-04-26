@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
+    /**
+     * Create a book
+     * We don't need to check anything in here, because the form can be only be
+     * submitted if it passes the given validation to Parsley JS and its component
+     */
     create: function () {
       // Let's create a Book model with the user information
       // We could code a better way to get those values by instanciating a model
